@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>FITEC | Central Tecnológica</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    :root { color-scheme: dark; --bg:#0b1120; --panel:#151f32; --line:#29364c; --blue:#60a5fa; --muted:#a8b4c8; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,Segoe UI,sans-serif; background:linear-gradient(180deg,#111c35 0,#0b1120 360px); color:#f8fafc; }
+    main { width:min(760px,100%); margin:auto; padding:24px 16px 40px; }
+    header { text-align:center; padding:22px 12px 26px; }
+    .mark { display:inline-grid; place-items:center; width:66px; height:66px; border:1px solid #3b82f6; background:#172554; border-radius:20px; font-size:32px; margin-bottom:12px; }
+    h1 { margin:0; font-size:30px; letter-spacing:1.5px; }
+    .subtitle { color:#b9c7dd; margin:8px 0 0; }
+    .section-title { margin:22px 2px 12px; font-size:12px; color:#93c5fd; letter-spacing:1.8px; text-transform:uppercase; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .dept { display:block; padding:16px; background:rgba(21,31,50,.96); border:1px solid var(--line); border-radius:16px; color:inherit; text-decoration:none; min-height:120px; transition:transform .12s,border-color .12s; }
+    .dept:active { transform:scale(.98); }
+    .dept:hover { border-color:#5285d6; }
+    .emoji { font-size:25px; }
+    .dept h2 { font-size:16px; margin:9px 0 5px; }
+    .dept p { color:var(--muted); font-size:12px; line-height:1.45; margin:0; }
+    .panel { background:rgba(21,31,50,.96); border:1px solid var(--line); border-radius:16px; padding:16px; }
+    .links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; }
+    .link { background:#1e2b43; border:1px solid #34445e; border-radius:11px; padding:12px 10px; color:#f8fafc; text-align:center; text-decoration:none; font-size:13px; }
+    .link:hover { background:#263a59; }
+    footer { color:#8493ab; text-align:center; font-size:11px; margin-top:28px; }
+    @media(max-width:380px) { .grid {grid-template-columns:1fr;} h1{font-size:26px;} }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="mark" aria-hidden="true">🐧</div>
+    <h1>FITEC</h1>
+    <p class="subtitle">Central Tecnológica · Conhecimento, projetos e inovação</p>
+  </header>
+
+  <div class="section-title">Departamentos</div>
+  <section class="grid" aria-label="Departamentos">
+    <a class="dept" href="#programacao" onclick="showDepartment('Programação');return false">
+      <div class="emoji">💻</div><h2>Programação</h2><p>Desenvolvimento, código e projetos</p>
+    </a>
+    <a class="dept" href="#ciberseguranca" onclick="showDepartment('Cibersegurança');return false">
+      <div class="emoji">🛡️</div><h2>Cibersegurança</h2><p>Defesa digital e estudos de segurança</p>
+    </a>
+    <a class="dept" href="#hardware" onclick="showDepartment('Hardware');return false">
+      <div class="emoji">🧩</div><h2>Hardware</h2><p>Computadores, eletrônica e componentes</p>
+    </a>
+    <a class="dept" href="#ia" onclick="showDepartment('Inteligência Artificial');return false">
+      <div class="emoji">🤖</div><h2>Inteligência Artificial</h2><p>Modelos, automação e experimentos</p>
+    </a>
+  </section>
+
+  <div class="section-title">Acesso rápido</div>
+  <section class="panel">
+    <div class="links">
+      <a class="link" href="#" onclick="notice();return false">📢 Mural geral</a>
+      <a class="link" href="#" onclick="notice();return false">📚 Biblioteca</a>
+      <a class="link" href="#" onclick="notice();return false">🧪 Projetos</a>
+      <a class="link" href="#" onclick="notice();return false">🎖️ Cargos e patentes</a>
+    </div>
+  </section>
+  <footer>FITEC · Painel de navegação comunitário</footer>
+</main>
+<script>
+  const tg = window.Telegram && window.Telegram.WebApp;
+  if (tg) { tg.ready(); tg.expand(); }
+  function notice() {
+    const msg = "Este botão ainda precisa ser ligado ao grupo ou canal correspondente.";
+    if (tg && tg.showAlert) tg.showAlert(msg); else alert(msg);
+  }
+  function showDepartment(name) {
+    const msg = name + ": os links de Chat, Mural, Biblioteca e Projetos serão configurados na próxima etapa.";
+    if (tg && tg.showAlert) tg.showAlert(msg); else alert(msg);
+  }
+</script>
+</body>
+</html>
