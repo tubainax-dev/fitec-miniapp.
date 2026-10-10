@@ -36,7 +36,7 @@ body {
   width: 85.7%;
   height: 23.2vw;
   max-height: 140px;
-  padding-left: 22%;
+  padding-left: 23vw;
   background: var(--amarelo);
   border: 2px solid var(--verde);
   border-radius: 2.2vw;
