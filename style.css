@@ -29,14 +29,13 @@ body {
 }
 
 .botao {
-  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
   width: 85.7%;
   height: 23.2vw;
   max-height: 140px;
-  padding-left: 23vw;
+  padding: 0 3% 0 5%;
+  gap: 4%;
   background: var(--amarelo);
   border: 2px solid var(--verde);
   border-radius: 2.2vw;
@@ -49,18 +48,11 @@ body {
 .botao:active { transform: scale(.98); }
 .botao:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 
-.texto {
-  font-size: clamp(30px, 10.7vw, 64px);
-  line-height: 1;
-  white-space: nowrap;
-}
-
 .icone {
-  position: absolute;
-  left: 5%;
-  top: 8%;
-  width: 22%;
-  height: 84%;
+  flex: 0 0 auto;
+  width: 18vw;
+  max-width: 108px;
+  aspect-ratio: 1 / 1;
   display: grid;
   place-items: center;
   background: var(--azul);
@@ -76,6 +68,15 @@ body {
   stroke-width: 1.7;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.texto {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  font-size: clamp(22px, 7.4vw, 48px);
+  line-height: 1;
+  white-space: nowrap;
 }
 
 @media (prefers-reduced-motion: reduce) {
